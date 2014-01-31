@@ -150,8 +150,8 @@ end
 
 clf, yl = [-0.3 1.3];
 xc = -0.15*[1 1];
-p10 = chebfun([zeros(1,10) 1 zeros(1,9)]);
-p11 = chebfun([zeros(1,11) 1 zeros(1,8)]);
+p10 = chebfun([zeros(1,10) 1 zeros(1,9)]');
+p11 = chebfun([zeros(1,11) 1 zeros(1,8)]');
 subplot(1,2,1), plot(p10,'.-')
 hold on, plot(xc,yl,'--r'), ylim(yl)
 title('Lagrange polynomial  l_{10}',FS,9)
@@ -168,8 +168,8 @@ title('Lagrange polynomial  l_{11}',FS,9)
 %%
 % <latex> \vskip -2em </latex>
 
-p12 = chebfun([zeros(1,12) 1 zeros(1,7)]);
-p13 = chebfun([zeros(1,13) 1 zeros(1,6)]);
+p12 = chebfun([zeros(1,12) 1 zeros(1,7)]');
+p13 = chebfun([zeros(1,13) 1 zeros(1,6)]');
 subplot(1,2,1), hold off, plot(p12,'.-')
 hold on, plot(xc,yl,'--r'), ylim(yl)
 title('Lagrange polynomial  l_{12}',FS,9)
