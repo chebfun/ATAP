@@ -344,7 +344,7 @@ ylim([0,5]), title('Legendre extreme points, n=15',FS,9)
 %%
 % <latex> \vspace{-2em} </latex> 
 
-ell = poly(s,domain(-1,1));
+ell = poly(chebfun(),s,[-1,1]);
 clf, plot(s,ell(s),'.k',MS,10)
 hold on, ylim([-0.9,0.9]), axis equal
 xgrid = -1.5:.02:1.5; ygrid = -0.9:.02:0.9;

@@ -285,6 +285,7 @@ title('Partial sum of a Fourier series',FS,9)
 % <latex> \vskip -2em </latex>
 
 f = sign(x);
+warnState = warning('off', 'CHEBFUN:constructor')
 subplot(1,2,1), hold off, plot(f,'k','jumpline','k'), hold on, grid on
 f9 = chebfun(f,'trunc',10); plot(f9,'-')
 title('Gibbs projection overshoot, n = 9',FS,9)
@@ -307,6 +308,7 @@ for np = 2.^(4:7)
   fprintf('%7d  %17.8f\n', np, max(g{0,5/np}))
 end
 limit = (2/pi)*sum(chebfun('sin(x)./x',[0 pi]))
+warning(warnState)
 
 %%
 % In all the experiments of this chapter we have worked with polynomials

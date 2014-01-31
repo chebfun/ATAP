@@ -175,11 +175,11 @@ ATAPformats
 % <latex> \vskip -2em </latex>
 
 npts = 4; clear p
-d = domain(-1,1); s = linspace(-1,1,4);
+d = [-1,1]; s = linspace(-1,1,4);
 for k = 1:npts
   subplot(2,2,k)
   y = [zeros(1,k-1) 1 zeros(1,npts-k)];
-  p{k} = interp1(s,y,d);
+  p{k} = chebfun.interp1(s,y,d);
   hold off, plot(p{k}), grid on
   hold on, plot(s,p{k}(s),'.'), FS = 'fontsize';
   plot(s(k),p{k}(s(k)),'hr','markersize',9), ylim([-.3 1.3])

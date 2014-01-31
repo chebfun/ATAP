@@ -316,9 +316,8 @@ title(['Geometric convergence for an analytic ' ...
 % comes very close to passing through the poles at $\pm 0.2i$:
 %%
 % <latex> \vskip -2em </latex>
-
 f = chebfun('1./(1+25*x.^2)');
-hold off, chebellipseplot(f,'linewidth',1)
+clf, chebellipseplot(f,'linewidth',1)
 hold on, plot([.2i -.2i],'xr','markersize',12)
 axis equal, ylim(.5*[-1 1]), grid on
 title('Chebfun ellipse for 1/(1+25x^2)',FS,9)

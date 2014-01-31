@@ -174,7 +174,7 @@ ATAPformats
 x = chebfun('x');
 hold off, plot(real(x),imag(x),'r')
 semi = 2*exp(0.5i*pi*x);
-S = [x-2i; 1+semi; 2i-x; -1-semi];
+S = join(x-2i, 1+semi, 2i-x, -1-semi);
 hold on, plot(S,'k'), axis equal off
 z = exp(1i*pi*x);
 Gamma = (2.8+.2i)*(sinh(z)+.5*real(z));
@@ -211,8 +211,8 @@ text(-1.4,-.3,'-1','color','r')
 %%
 % <latex> \vspace{-2em} </latex> 
 np = 8; xj = chebpts(np); FS = 'fontsize';
-d = domain([-1.5,1.5]);
-ell = poly(xj,d);
+d = [-1.5,1.5];
+ell = poly(chebfun(), xj, d);
 hold off, plot(ell), grid on
 hold on, plot(xj,ell(xj),'.k'), ylim([-.5 1.5])
 title('A degree 8 polynomial with roots at Chebyshev points',FS,9)
@@ -258,7 +258,7 @@ title(['Curves |l(x)| = 2^{-6}, 2^{-5}, ..., 1 '...
 
 %%
 xj = [-1 -1 -1 -1 1 1 1 1];
-ell = poly(xj,d);
+ell = poly(chebfun,xj,d);
 hold off, plot(ell), grid on
 hold on, plot(xj,ell(xj),'.k'), ylim([-.5 1.5])
 title('A degree 8 polynomial with roots at 1 and -1',FS,9)
