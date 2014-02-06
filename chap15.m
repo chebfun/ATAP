@@ -335,7 +335,7 @@ title('Lebesgue function for 100 Chebyshev points',FS,9)
 %%
 % <latex> \vskip -2em </latex>
 
-s = chebpts(20); d = (-1).^[1:10 10:19];
+s = chebpts(20); d = (-1).^[1:10 10:19]';
 plot(s,d,'.k'), ylim([-2.5 3.5])
 title('Worst possible data for Chebyshev interpolant',FS,9)
 
