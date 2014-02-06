@@ -67,7 +67,7 @@ x = chebfun('x'); f = 1./(1+25*x.^2);
 %%
 % <latex> \vskip -2em </latex>
 
-s = linspace(-1,1,8); p = chebfun.interp1(s,f(s));
+s = linspace(-1,1,8); p = interp1(s,f,domain(-1,1));
 hold off, plot(f), hold on, plot(p,'r'), grid on
 plot(s,p(s),'.r'), axis([-1 1 -1 3]), FS = 'fontsize';
 title('Equispaced interpolation of Runge function, 8 points',FS,9)
@@ -81,7 +81,7 @@ title('Equispaced interpolation of Runge function, 8 points',FS,9)
 %%
 % <latex> \vskip -2em </latex>
 
-s = linspace(-1,1,16); p = chebfun.interp1(s,f(s));
+s = linspace(-1,1,16); p = interp1(s,f,domain(-1,1));
 hold off, plot(f), hold on, plot(p,'r'), grid on
 plot(s,p(s),'.r'), axis([-1 1 -1 3])
 title('Equispaced interpolation of Runge function, 16 points',FS,9)
@@ -96,7 +96,7 @@ title('Equispaced interpolation of Runge function, 16 points',FS,9)
 %%
 % <latex> \vskip -2em </latex>
 
-s = linspace(-1,1,20); p = chebfun.interp1(s,f(s));
+s = linspace(-1,1,20); p = interp1(s,f,domain(-1,1));
 hold off, plot(f), hold on, plot(p,'r'), grid on
 plot(s,p(s),'.r'), axis([-1 1 -1 3])
 title('Equispaced interpolation of Runge function, 20 points',FS,9)
@@ -116,7 +116,7 @@ title('Equispaced interpolation of Runge function, 20 points',FS,9)
 
 ee = []; nn = 2:2:50;
 for np = nn
-  s = linspace(-1,1,np); p = chebfun.interp1(s,f);
+  s = linspace(-1,1,np); p = interp1(s,f,domain(-1,1));
   ee = [ee norm(f-p,inf)];
 end
 hold off, semilogy(nn,ee,'.-'), grid on, axis([0 50 5e-2 2e6])
@@ -133,12 +133,12 @@ xlabel n+1, title('Divergence as n+1 -> \infty',FS,9)
 
 %%
 % <latex> \vspace{-2em} </latex>
-d = [-1.5,1.5];
+d = domain(-1.5,1.5);
 xgrid = -1.5:.02:1.5; ygrid = -1:.02:1;
 [xx,yy] = meshgrid(xgrid,ygrid); zz = xx+1i*yy;
 for np = [8 20]
   xj = linspace(-1,1,np);
-  ell = poly(chebfun(),xj,d);
+  ell = poly(xj,d);
   hold off, plot(xj,ell(xj),'.k','markersize',8)
   hold on, ylim([-1.2 1.2]), axis equal
   ellzz = ell(zz);
@@ -246,7 +246,7 @@ f = max(0,1-2*abs(x));
 eequi = []; echeb = []; nn = 2:2:60;
 for n = nn
   s = linspace(-1,1,n+1);
-  pequi = chebfun.interp1(s,f(s)); eequi = [eequi norm(f-pequi,inf)];
+  pequi = interp1(s,f,domain(-1,1)); eequi = [eequi norm(f-pequi,inf)];
   pcheb = chebfun(f,n+1); echeb = [echeb norm(f-pcheb,inf)];
 end
 hold off, semilogy(nn,2.^(nn-12),'--r')
@@ -275,7 +275,7 @@ f = exp(x);
 eequi = []; echeb = []; nn = 2:2:80;
 for n = nn
   s = linspace(-1,1,n+1);
-  pequi = chebfun.interp1(s,f(s)); eequi = [eequi norm(f-pequi,inf)];
+  pequi = interp1(s,f,domain(-1,1)); eequi = [eequi norm(f-pequi,inf)];
   pcheb = chebfun(f,n+1); echeb = [echeb norm(f-pcheb,inf)];
 end
 hold off, semilogy(nn,2.^(nn-50),'--r')

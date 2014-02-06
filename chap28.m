@@ -77,7 +77,7 @@ chebellipseplot(p,'b','linewidth',2)
 % points and draw the same contour plots as before.  The picture changes
 % completely, showing very impressive agreement over most of the range
 % plotted. This is the power and the promise of rational approximation.
-d = [-1,1];
+d = domain(-1,1);
 [p,q,r,mu,nu,poles] = ratinterp(d,f,7,8,1000); rr = r(zz);
 subplot(1,2,1), hold off, contour(x,y,abs(ff),lev1,'k'), hold on
 contour(x,y,abs(ff),lev2,'r')

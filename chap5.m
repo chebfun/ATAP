@@ -40,8 +40,8 @@ ATAPformats
 % j.$} \eqno (5.2) $$ For example, here is a plot of $\ell_5$ on the
 % equispaced $7$-point grid (i.e., $n=6$):
 % \vspace{-1em} </latex>
-d = [-1,1]; s = linspace(-1,1,7); y = [0 0 0 0 0 1 0];
-p = chebfun.interp1(s,y,d);
+d = domain(-1,1); s = linspace(-1,1,7); y = [0 0 0 0 0 1 0];
+p = interp1(s,y,d);
 plot(p), hold on, plot(s,p(s),'.k'), grid on, FS = 'fontsize';
 title('Lagrange polynomial  l_5  on 7-point equispaced grid',FS,9)
 
