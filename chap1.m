@@ -3,6 +3,7 @@
 %%
 % Welcome to a beautiful subject!---the constructive approximation of
 % functions.  And welcome to a rather unusual book.
+%
 
 %%
 % Approximation theory is an established field, and my aim is to teach you
