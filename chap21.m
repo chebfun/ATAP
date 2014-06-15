@@ -179,7 +179,7 @@ norm(D2(5)-(D(5))^2)
 %%
 % <latex> \vskip -2em </latex>
 
-p3 = chebfun([0 0 0 1 0]); FS = 'fontsize';
+p3 = chebfun([0 0 0 1 0]'); FS = 'fontsize';
 clf, plot(p3,'.-'), title('Lagrange polynomial l_3',FS,9)
 
 %%
