@@ -145,7 +145,7 @@ a = fliplr(chebpoly(p))
 % <latex> \vskip -2em </latex>
 
 C = [0 1 0; 1/2 0 1/2; 0 1/2 0] - ...
-    (1/(2*a(4)))*[0 0 0; 0 0 0; a(1:3)]
+    (1/(2*a(4)))*[0 0 0; 0 0 0; a(1:3).']
 
 %%
 % has eigenvalues that match the roots of $p$:
