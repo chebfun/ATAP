@@ -290,8 +290,8 @@ Chat = @(f,n,N) toeplitz(column(f,N),row(f,n,N));
 % Next we extract the submatrices $\tilde C$ and $C$:
 %%
 % <latex> \vspace{-2em}</latex>
-Ctilde = @(f,m,n,N) extract(Chat(f,n,N),m+2:N+1,:);
-C = @(f,m,n,N) extract(Chat(f,n,N),1:m+1,:);
+Ctilde = @(f,m,n,N) extract(Chat(f,n,N),m+2:N+1,':');
+C = @(f,m,n,N) extract(Chat(f,n,N),1:m+1,':');
 
 %%
 % Finally we compute the vector ${\kern .7pt\bf b}$ using the Matlab |null| command,
